@@ -1,2 +1,2 @@
 # MpalaWater
-Data and 
+Files and data related to the Mpala Water and Critters Project
