@@ -8,7 +8,7 @@ library(stars)
 library(maptools)
 library(data.table)
 library(birk)
-
+library(plyr)
 ##INSTRUCTIONS:
 #Move to line 218 to Start, first part
 
@@ -84,10 +84,19 @@ create_grid <- function(buffer, grid.size = 100, random = FALSE, offset.mean = N
 ##NEXT STEP
 #function that takes in obseration data and runs against 3 rasters, creates new distances csv file. 
 
-observation.data <- read.csv("file_name.csv") #input full observation data here (not nececssary above?)
-riverraster <- raster("riverraster.tif")
-roadraster <- raster("roadraster.tif")
-waterraster <- raster("waterraster.tif")
+#Merge New Data
+existingdata <- read.csv("sightings.csv")
+existingdata <- existingdata[exisitingdata$Y > 0,] ## get rid of funky 0s, not sure what thats about
+newdata <- read.csv("/Users/Maddie/Documents/GradSchool/Spring2020/WildlifeSightings/RawData/May/2_1_2__All_live_wildlife_sightings_000010.csv")
+newdata <- newdata[newdata$Y > 0,] ## get rid of funky 0s, not sure what thats about
+mergedobs <- rbind.fill(existingdata,newdata)
+
+#input full observation data here (not nececssary above?)
+
+
+riverraster <- raster("/Users/Maddie/Documents/GradSchool/Spring2020/WildlifeSightings/MpalaWater/Rasters/riverraster.tif")
+roadraster <- raster("/Users/Maddie/Documents/GradSchool/Spring2020/WildlifeSightings/MpalaWater/Rasters/roadraster.tif")
+waterraster <- raster("/Users/Maddie/Documents/GradSchool/Spring2020/WildlifeSightings/MpalaWater/Rasters/waterraster.tif")
 sample_grid <- create_grid(bufferobs, grid.size = 400, random = TRUE, offset.mean = 10, offset.sd = 5, what="polygons")
 ## compared to the (264088.2 33723.97) to dam 1, the distance is 753.8003 using the grid method and it's 638.8 using qgis
 ##with the simple distance measuring tool is 638.96 to dam 1. zebra is in grid 533
@@ -132,7 +141,7 @@ observationdata <- observationdata[observationdata$Y > 0,] ## get rid of funky 0
   return(observation_polygons_df)
 } 
 
-river_road_water_distances <- find_distances(data, riverraster, roadraster, waterraster, sample_grid) #returns as dataframe
+river_road_water_distances <- find_distances(mergedobs, riverraster, roadraster, waterraster, sample_grid) #returns as dataframe
 write.csv(river_road_water_distances, "river_road_water.csv")
 head(river_road_water_distances)
 #Adding Dam IDs
@@ -142,9 +151,9 @@ head(river_road_water_distances)
 #gives you nearest dam to every grid id. gives you all grid ids and feature of dam data set
 #merge to bigger dataset with grid based on grid id
 #Create a separate grid for dam IDs that allows us to get feautres of dam data set
-dam_grid <- create_dam_grid(bufferobs, grid.size = 400, random = TRUE, offset.mean = 10, offset.sd = 5, what = "centers")
+dam_grid <- create_grid(bufferobs, grid.size = 400, random = TRUE, offset.mean = 10, offset.sd = 5, what = "centers")
 dam_grid$gridID = seq(1, nrow(dam_grid), by = 1)
-dam_grid <- st_transform_proj(dam_grid, "+init=epsg:21097 +proj=utm +zone=37 +ellps=clrk80 +towgs84=-160,-6,-302,0,0,0,0 +units=m +no_defs")
+dam_grid <- st_transform(dam_grid, "+init=epsg:21097 +proj=utm +zone=37 +ellps=clrk80 +towgs84=-160,-6,-302,0,0,0,0 +units=m +no_defs")
 water_sf <- st_as_sf(watercoords)
 nearest_dam <- st_join(dam_grid, water_sf, join=st_nearest_feature, left=TRUE)
 #Join distances added to dataframe above with the nearest dam data by gridID
@@ -202,7 +211,7 @@ value <- function(river_road_waterID_levels) {
 river_road_waterID_levels <- cbind(river_road_waterID_levels, value(river_road_waterID_levels))
 #rename column of water levels
 colnames(river_road_waterID_levels)[which(names(river_road_waterID_levels) == "value(river_road_waterID_levels)")] <- "closestValue"
-write.csv(river_road_waterID_levels, "CompleteDataFrame.csv")
+write.csv(river_road_waterID_levels, "CompleteDataFrame-May.csv")
 
 ##Graphing Distances for Dan
 ## date = closestDate(patrolStartDate, three_dates)
