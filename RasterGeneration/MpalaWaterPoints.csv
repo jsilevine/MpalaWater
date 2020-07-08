@@ -1,0 +1,26 @@
+Number,Dam,North,East,Elevation,Storage Estimate,Description,Estimated Class,Permit Needed,Freeboard (m),Width (m),Fetch (m),Spillway Width (m),Height (m),Water Depth (m),Approximate Volume (m^3),xcoord,ycoord
+1,Small High Dam,34644,264155,1772,"3,568","Straight Earth Wall, Spillway to Left when facing D/S.  Requires Dessilting",A,1,124,100,10,2.7,1.7,"3,568",,264155,34644
+2,Top Dam,34483,264512,1765,"9,792","Straight Earth Wall, Spillway to Right when Facing D/S, Small Island, ",A/B,1.5,130,167,25,4.2,2.7,"9,792",,264512,34483
+3,Black Cotton Dam,38374,260132,1792,"6,890","Straight Earth Wall, Spillway to Left when facing D/S, Online on Karunga Lagga, Good Silt Trap",A,1.5,195,106,10,3.5,2,"6,890",,260132,38374
+4,Small Black Cotton Dam,38739,261510,1783,"3,642","Steep D/S Slopes, online main Karunga Lagga",A,2,164,90,5,3.5,1.5,"3,642",,261510,38739
+5,Karunga Dam,40296,261853,1750,"5,213","Concrete Wall, Deep, Low Evaporation",A/B,0,23,170,23,4,4,"5,213",,261853,40296
+6,Lochokodo Dam,41329,260497,1740,"2,305","Curved Earth Wall, Spillway to Left when facing D/S, Offline from Main Karunga Lagga",A,1.2,64,60,8,4.8,3.6,"2,305",,260497,41329
+7,Chief Dam,42567,259619,1720,512,"Straight Wall,  Could go Higher if filling reliably, 1.5m taller gives 8K storage",A,0.5,45,47,9,2,1.5,512,,259619,42567
+8,Borehole Dam,42649,261556,1689,"8,455",Curved Wall,A,1.2,192,160,30,2.9,1.7,"8,455",,261556,42649
+9,Mukenya Dam,43340,263684,1668,"4,326","Slightly Curved Earth Wall, NEEDS DESILTING (volume is current, 10K silt to be removed)",A,0.5,170,185,10,1.3,0.8,"4,326",,263684,43340
+10,Lolora Nakundu Dam,46186,260298,1660,"21,499","Straight Wall, Recently desilted and raised?",A/B,1.5,185,380,17,3.3,1.8,"21,499",,260298,46186
+11,Dam Nyeusi,44717,261988,1682,"7,114","Slightly Curved Earth Wall , Spillway poorly defined",A,0.5,161,100,5,3.2,2.7,"7,114",,261988,44717
+12,Lolora Dam,47421,259655,1649,"6,360","Straight Wall, several islands",A,1.8,172,261,31,2.7,0.8,"6,360",,259655,47421
+13,Soinashi Dam,50703,259864,1635,"14,803","Straight Earth Wall, Spillways Both Sides",A,2,240,260,25,3.4,1.4,"14,803",,259864,50703
+14,Small Dam Raitati,52571,263263,1629,"3,216","Straight Earth Wall, Needs D/S Repairs, slopes to steep",A,1.2,120,82,15,3.2,2,"3,216",,263263,52571
+15,Ngaramata Dam,53895,259774,1603,"13,047","Slightly Curved Wall, Needs Embankment Repair and protection",A,1.5,247,182,63,3.2,1.7,"13,047",,259774,53895
+16,Nyanja One,36931,264775,1724,"2,516",Rubble Stone ALDEV Wall,A,Maybe,0,30,68,30,3.7,3.7,"2,516",264775,36931
+17,Nyanja Two,36890,264716,1727,"1,868",Rubble Stone ALDEV Wall,A,Maybe,0,23,84,23,2.9,2.9,"1,868",264716,36890
+18,Nyanja Three,36792,264662,1733,"2,550",Rubble Stone ALDEV Wall,A,Maybe,0,30,75,30,3.4,3.4,"2,550",264662,36792
+19,Nyanja Four,36703,264647,1738,"2,574",Rubble Stone ALDEV Wall,A,Maybe,0,36,65,36,3.7,3.3,"2,574",264647,36703
+20,Nyanja Five,36636,264635,1742,"4,620",Rubble Stone ALDEV Wall,A,Maybe,0,42,100,48,3.3,3.3,"4,620",264635,36636
+21,Nyanja Six,36481,264612,1746,"2,660",Rubble Stone ALDEV Wall,A,Maybe,0,40,95,49,3.5,3.5,"2,660",264612,36481
+22,Wildlife Weir,37358.509,263539.069,1763,"11,293","Rubble Stone ALDEV Wall, Position may use WGS84 datum",A,0,88,220,88,3.5,3.5,"11,293",,263539.069,37358.509
+23,Airstrip Dam,38374,260132,1792,"1,800",Curved Wall Requires Desilting,A,0.5,100,54,5,2.5,2,"1,800",,260132,38374
+24,Enlarged Cheifs Dam,42567,259619,?,"8,000",Added 1.5m,A,0.5,160,100,9,3.5,3,"8,000",,259619,42567
+,,,,,,,,,,,,,,,,,
